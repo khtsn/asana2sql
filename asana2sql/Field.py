@@ -1,13 +1,13 @@
 from enum import Enum
 import re
 
-FIELD_DEFINITION_TEMPLATE = """"{name}" {type}"""
-PRIMARY_KEY_DEFINITION_TEMPLATE = """"{name}" {type} NOT NULL PRIMARY KEY"""
+FIELD_DEFINITION_TEMPLATE = """`{name}` {type}"""
+PRIMARY_KEY_DEFINITION_TEMPLATE = """`{name}` {type} NOT NULL PRIMARY KEY"""
 
 class SqlType(object):
     STRING = "VARCHAR(1024)"
     TEXT = "TEXT"
-    INTEGER = "INTEGER"
+    INTEGER = "BIGINT"
     DATETIME = "DATETIME"
     DATE = "DATE"
     BOOLEAN = "BOOLEAN"

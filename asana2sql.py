@@ -5,7 +5,7 @@ import pyodbc
 import requests
 
 from asana2sql.fields import default_fields
-from asana2sql.project import Project
+from asana2sql.Project import Project
 from asana2sql.workspace import Workspace
 from asana2sql.db_wrapper import DatabaseWrapper
 from asana import Client, session
@@ -144,6 +144,8 @@ def main():
     if args.odbc_string:
         print("Connecting to database.")
         db_client = pyodbc.connect(args.odbc_string)
+        db_client.setdecoding(pyodbc.SQL_WCHAR, encoding='utf-8')
+        db_client.setencoding(encoding='utf-8')
 
     db_wrapper = DatabaseWrapper(db_client, dump_sql=args.dump_sql, dry=args.dry)
 

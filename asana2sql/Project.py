@@ -9,7 +9,7 @@ CREATE_TABLE_TEMPLATE = (
         """CREATE TABLE IF NOT EXISTS "{table_name}" ({columns});""")
 
 INSERT_OR_REPLACE_TEMPLATE = (
-        """INSERT OR REPLACE INTO "{table_name}" ({columns}) VALUES ({values});""")
+        """REPLACE INTO "{table_name}" ({columns}) VALUES ({values});""")
 
 SELECT_TEMPLATE = (
         """SELECT {columns} FROM "{table_name}";""")
